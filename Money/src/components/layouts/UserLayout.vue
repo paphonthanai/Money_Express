@@ -1,6 +1,8 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { RouterLink, useRouter } from 'vue-router'
+
+
 const isLoggedIn = ref(false)
 
 const router = useRouter()
@@ -27,15 +29,15 @@ const logout = () => {
 }
 
 const handleEnter = (event) => {
-    if (event.key === 'Enter') {
-      router.push({
-        name: 'search',
-        query: {
-          q: searchText.value
-        }
-      })
-    }
+  if (event.key === 'Enter') {
+    router.push({
+      name: 'search',
+      query: {
+        q: searchText.value
+      }
+    })
   }
+}
 </script>
 
 <template>
@@ -68,13 +70,8 @@ const handleEnter = (event) => {
 
       <div class="flex justify-end mx-10">
         <div class="form-control mx-4">
-          <input
-          type="text"
-          v-model="searchText"
-          placeholder="Search"
-          class="input input-bordered w-24 md:w-auto"
-          @keyup="handleEnter" 
-        />
+          <input type="text" v-model="searchText" placeholder="Search" class="input input-bordered w-24 md:w-auto"
+            @keyup="handleEnter" />
         </div>
         <div class="">
           <div v-if="!isLoggedIn" @click="login" class="flex items-center space-x-4">
@@ -115,11 +112,30 @@ const handleEnter = (event) => {
     <div class="navbar bg-[#121D3D]">
       <div class="mx-auto text-[#fff]">
         <ul class="flex flex-cols gap-2">
-          <li class="btn">เติมเกมส์</li>
-          <li class="btn">เติมเงิน</li>
-          <li class="btn">โปรโมชั่น</li>
-          <li class="btn">ซื้อขาย ไอดีเกมส์</li>
-          <li class="btn">บริการอื่นๆ</li>
+          <li class="btn glass backdrop-blur-md
+           bg-white/0 border border-white/20 rounded-md">
+            หน้าหลัก
+          </li>
+          <li class="btn glass backdrop-blur-md 
+          bg-white/0 border border-white/20 rounded-md">
+            เติมเกมส์
+          </li>
+          <li class="btn glass backdrop-blur-md 
+          bg-white/0 border border-white/20 rounded-md">
+            เติมเงิน
+          </li>
+          <li class="btn glass backdrop-blur-md 
+          bg-white/0 border border-white/20 rounded-md">
+            โปรโมชั่น
+          </li>
+          <li class="btn glass backdrop-blur-md 
+          bg-white/0 border border-white/20 rounded-md">
+            ซื้อขาย ไอดีเกมส์
+          </li>
+          <li class="btn glass backdrop-blur-md 
+          bg-white/0 border border-white/20 rounded-md">
+            บริการอื่นๆ
+          </li>
         </ul>
       </div>
 
@@ -133,25 +149,30 @@ const handleEnter = (event) => {
 
     <footer class="footer p-10 bg-neutral text-neutral-content">
       <div>
-        <span class="footer-title">Services</span>
-        <a class="link link-hover">Branding</a>
-        <a class="link link-hover">Design</a>
-        <a class="link link-hover">Marketing</a>
-        <a class="link link-hover">Advertisement</a>
+        <span class="footer-title">บริการ</span>
+        <a class="link link-hover">หน้าแรก</a>
+        <a class="link link-hover">เติมเกมส์</a>
+        <a class="link link-hover">เติมเงิน</a>
+        <a class="link link-hover">ซื้อ-ขาย ไอดีเกมส์</a>
       </div>
       <div>
         <span class="footer-title">Company</span>
-        <a class="link link-hover">About us</a>
-        <a class="link link-hover">Contact</a>
-        <a class="link link-hover">Jobs</a>
-        <a class="link link-hover">Press kit</a>
+        <a class="link link-hover">เกี่ยวกับเรา</a>
+        <a class="link link-hover">
+          ติดต่อ
+        </a>
+        <a class="link link-hover">บริการอื่นๆ</a>
       </div>
       <div>
-        <span class="footer-title">Legal</span>
-        <a class="link link-hover">Terms of use</a>
-        <a class="link link-hover">Privacy policy</a>
-        <a class="link link-hover">Cookie policy</a>
+        <span class="footer-title">เกี่ยวกับกฎหมาย</span>
+        <a class="link link-hover">
+          เงื่อนไขการใช้งาน
+        </a>
+        <a class="link link-hover">นโยบายความเป็นส่วนตัว</a>
+        <a class="link link-hover">นโยบายคุกกี้</a>
       </div>
     </footer>
+    <div class="w-full bg-base-300 text-center py-4 text-sm text-gray-500">
+      © Copyright PNJ Tech.Co.,Ltd. All rights reserved.</div>
   </div>
 </template>
