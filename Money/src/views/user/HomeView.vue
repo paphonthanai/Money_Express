@@ -22,11 +22,11 @@ onMounted(() => {
 <template>
   <UserLayout>
     <Banner class="my-2"/>
-    <div class="section1 container mx-auto">
-      <div class="flex w-full">
+    <div class="section1 container w-full mx-auto">
+      <div class="w-full mx-auto">
         <MenuBar class="mx-auto my-2"/>
       </div>
-      <div>
+      <div class="w-full">
         <SPECIALOFFER />
       </div>
     </div>

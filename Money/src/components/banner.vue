@@ -2,7 +2,7 @@
 import { ref, onMounted, onUnmounted, computed } from 'vue'
 
 const currentSlide = ref(0)
-const totalSlides = 3
+const totalSlides = 4
 
 let interval = null
 
@@ -15,51 +15,58 @@ const prevSlide = () => {
 }
 
 onMounted(() => {
-  interval = setInterval(() => {
-    nextSlide()
-  }, 5000) // 5 วินาที
+  interval = setInterval(nextSlide, 5000)
 })
 
 onUnmounted(() => {
   clearInterval(interval)
 })
 
-const slideStyle = computed(() => {
-  return {
-    transform: `translateX(-${currentSlide.value * 100}%)`
-  }
-})
+const slideStyle = computed(() => ({
+  transform: `translateX(-${currentSlide.value * 100}%)`
+}))
 </script>
 
 <template>
-  <div class="w-full bg-gthost flex justify-center">
-    <div class="relative w-full rounded-md overflow-hidden" style="height: 293px; width: 1279px;">
+  <div class="w-[96%] mx-auto bg-gthost flex justify-center">
+    <div class="relative w-full max-w-full rounded-md overflow-hidden" style="height: 350px;">
       
-      <!-- Slides container -->
-      <div 
-        class="flex transition-transform duration-700 ease-in-out h-full"
+      <!-- Slide container -->
+      <div
+        class="flex transition-transform duration-700 ease-in-out w-full"
         :style="slideStyle"
       >
-        <!-- Slide 1 -->
-        <div class="flex-shrink-0 w-full h-full">
-          <img src="@/assets/Image/Banner/Banner1.jfif" class="w-full h-full object-cover object-top" alt="banner1" />
+        <div class="flex-shrink-0 w-full">
+          <img src="../assets/Image/Banner/Banner1.jfif"
+               class="w-full h-[300px] object-cover object-top" />
         </div>
-        <!-- Slide 2 -->
-        <div class="flex-shrink-0 w-full h-full">
-          <img src="@/assets/Image/Banner/Banner1.jfif" class="w-full h-full object-cover object-center" alt="banner2" />
+        <div class="flex-shrink-0 w-full">
+          <img src="../assets/Image/Banner/Banner1.jfif"
+               class="w-full h-[300px] object-cover object-center" />
         </div>
-        <!-- Slide 3 -->
-        <div class="flex-shrink-0 w-full h-full">
-          <img src="@/assets/Image/Banner/Banner1.jfif" class="w-full h-full object-cover object-bottom" alt="banner3" />
+        <div class="flex-shrink-0 w-full">
+          <img src="../assets/Image/Banner/Banner1.jfif"
+               class="w-full h-[300px] object-cover object-bottom" />
+        </div>
+        <div class="flex-shrink-0 w-full">
+          <img src="../assets/Image/Banner/Banner2.jpg"
+               class="w-full h-[300px] object-cover" />
         </div>
       </div>
 
-      <!-- ปุ่มซ้ายขวา -->
-      <div class="absolute flex justify-between transform -translate-y-1/2 left-2 right-2 top-1/2">
-        <button @click="prevSlide" class="btn btn-circle btn-sm md:btn-md">❮</button>
-        <button @click="nextSlide" class="btn btn-circle btn-sm md:btn-md">❯</button>
-      </div>
-
+      <!-- Dots -->
+       <div class="mt-4">
+           <div class="absolute left-1/2 transform -translate-x-1/2 flex gap-2">
+             <button
+               v-for="n in totalSlides"
+               :key="n"
+               @click="currentSlide = n - 1"
+               :class="['btn btn-xs', currentSlide === n - 1 ? 'btn-primary' : 'btn-ghost']"
+             >
+               {{ n }}
+             </button>
+           </div>
+       </div>
     </div>
   </div>
 </template>

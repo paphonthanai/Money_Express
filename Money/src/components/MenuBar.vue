@@ -10,12 +10,8 @@ import iconSell from '@/components/icons/iconSell.vue'
 
 <template>
 
-    <div class="mx-auto text-[#fff]">
-        <ul class="flex flex-cols gap-4">
-            <!-- <li class="btn rounded-md">
-                <iconHome />
-                หน้าหลัก
-            </li> -->
+    <div class="w-full mx-auto text-[#fff]">
+        <ul class="hidden md:flex flex-cols gap-4 justify-center">
             <li class="btn glass py-8 px-6 text-lg font-thin
             bg-white/10 border-white/30 shadow-lg backdrop-blur-md hover:bg-white/20">
                 <iconGamepad />
