@@ -50,7 +50,7 @@ const slideStyle = computed(() => ({
         </div>
         <div class="flex-shrink-0 w-full">
           <img src="../assets/Image/Banner/Banner2.jpg"
-               class="w-full h-[300px] object-cover" />
+               class="w-full h-[300px] object-cover object-bottom" />
         </div>
       </div>
 
