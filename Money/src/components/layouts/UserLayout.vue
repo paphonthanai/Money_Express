@@ -44,10 +44,14 @@ const handleEnter = (event) => {
 <template>
   <div class="">
     <div
-      class="grid grid-cols-1 sm:grid-cols-2 items-center h-24 py-1 space-between bg-gradient-to-r from-[#350534] via-[#940691] to-[#350534]">
+      class="grid grid-cols-1 
+      sm:grid-cols-2 items-center h-24 py-1 space-between 
+      bg-gradient-to-r from-[#350534] via-[#940691] to-[#350534]">
       <div class="text-[#fff]">
         <div class="hidden sm:flex flex-1">
           <RouterLink to="/" class="
+            ml-4
+            border-none
             btn btn-ghost
             normal-case
             text-[3em]
@@ -70,26 +74,26 @@ const handleEnter = (event) => {
       </div>
 
       <div class="flex justify-center sm:justify-end mx-10">
-        <div class="form-control mx-4">
+        <div class="form-control mx-4 my-auto">
           <input
           type="text"
           v-model="searchText"
           placeholder="Search"
-          class="input input-bordered w-24 md:w-auto"
+          class="input input-bordered flex p-2 rounded-lg"
           @keyup="handleEnter" 
         />
         </div>
         <div class="">
-          <div v-if="!isLoggedIn" @click="login" class="flex items-center space-x-4">
+          <div v-if="!isLoggedIn" @click="login" class="flex h-full items-center space-x-4">
             <RouterLink to="/register"
-              class="btn btn-ghost text-[#fff] hover:bg-transparent hover:text-white hover:shadow-none hover:border-none px-2">
+              class="btn btn-ghost border-none text-[#fff] hover:bg-transparent hover:text-white hover:shadow-none hover:border-none px-2 py-2">
               Register
             </RouterLink>
             <div
-              class="btn btn-ghost text-[#fff] hover:bg-transparent hover:text-white hover:shadow-none hover:border-none p-0">
+              class="btn btn-ghost border-none text-[#fff] hover:bg-transparent hover:text-white hover:shadow-none hover:border-none p-0 py-2">
               /</div>
             <div
-              class="btn btn-ghost text-[#fff] hover:bg-transparent hover:text-white hover:shadow-none hover:border-none px-2"
+              class="btn btn-ghost border-none text-[#fff] hover:bg-transparent hover:text-white hover:shadow-none hover:border-none px-2 py-2"
               @click="login">
               Login
             </div>
@@ -101,7 +105,7 @@ const handleEnter = (event) => {
                 <img src="https://mikelopster.dev/mikelopster.da6b9a03.webp" />
               </div>
             </label>
-            <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+            <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-lg w-52">
               <li>
                 <RouterLink to="/profile" class="justify-between">
                   Profile
@@ -118,14 +122,40 @@ const handleEnter = (event) => {
     </div>
 
 
-    <div class="navbar pb-2 pt-6  bg-[#121D3D] overflow-scroll">
-      <div class="mx-auto text-[#fff]">
+    <div class="navbar bg-warnning glass py-4 rounded-lg mt-1
+     overflow-x-auto mx-auto">
+      <div class="mx-auto text-currentColor">
         <ul class="flex flex-cols gap-2">
-          <li class="btn">เติมเกมส์</li>
-          <li class="btn">เติมเงิน</li>
-          <li class="btn">โปรโมชั่น</li>
-          <li class="btn">ซื้อขาย ไอดีเกมส์</li>
-          <li class="btn">บริการอื่นๆ</li>
+          <li class="btn py-4 px-4 text-lg font-thin 
+          bg-white/10 border-2 border-neutral/30
+          shadow-lg backdrop-blur-md hover:bg-white/20 rounded-lg">
+            หน้าแรก
+          </li>
+          <li class="btn py-4 px-4 text-lg font-thin 
+          bg-white/10 border-2 border-neutral/30
+          shadow-lg backdrop-blur-md hover:bg-white/20 rounded-lg">
+            เติมเกมส์
+          </li>
+          <li class="btn py-4 px-4 text-lg font-thin 
+          bg-white/10 border-2 border-neutral/30
+          shadow-lg backdrop-blur-md hover:bg-white/20 rounded-lg">
+            เติมเงิน
+          </li>
+          <li class="btn py-4 px-4 text-lg font-thin 
+          bg-white/10 border-2 border-neutral/30
+          shadow-lg backdrop-blur-md hover:bg-white/20 rounded-lg">
+            โปรโมชั่น
+          </li>
+          <li class="btn py-4 px-4 text-lg font-thin 
+          bg-white/10 border-2 border-neutral/30
+          shadow-lg backdrop-blur-md hover:bg-white/20 rounded-lg">
+            ซื้อขาย ไอดีเกมส์
+          </li>
+          <li class="btn py-4 px-4 text-lg font-thin 
+          bg-white/10 border-2 border-neutral/30
+          shadow-lg backdrop-blur-md hover:bg-white/20 rounded-lg">
+            บริการอื่นๆ
+          </li>
         </ul>
       </div>
 

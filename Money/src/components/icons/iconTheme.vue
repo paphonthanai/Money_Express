@@ -5,7 +5,7 @@ const isDark = ref(false)
 
 const toggleTheme = () => {
   isDark.value = !isDark.value
-  const theme = isDark.value ? 'dark' : 'light'
+  const theme = isDark.value ? 'dark' : 'luxury'
   document.documentElement.setAttribute('data-theme', theme)
 }
 
