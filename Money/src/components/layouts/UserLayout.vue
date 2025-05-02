@@ -30,21 +30,20 @@ const logout = () => {
 }
 
 const handleEnter = (event) => {
-    if (event.key === 'Enter') {
-      router.push({
-        name: 'search',
-        query: {
-          q: searchText.value
-        }
-      })
-    }
+  if (event.key === 'Enter') {
+    router.push({
+      name: 'search',
+      query: {
+        q: searchText.value
+      }
+    })
   }
+}
 </script>
 
 <template>
   <div class="">
-    <div
-      class="grid grid-cols-1 
+    <div class="grid grid-cols-1 
       sm:grid-cols-2 items-center h-24 py-1 space-between 
       bg-gradient-to-r from-[#350534] via-[#940691] to-[#350534]">
       <div class="text-[#fff]">
@@ -75,13 +74,8 @@ const handleEnter = (event) => {
 
       <div class="flex justify-center sm:justify-end mx-10">
         <div class="form-control mx-4 my-auto">
-          <input
-          type="text"
-          v-model="searchText"
-          placeholder="Search"
-          class="input input-bordered flex p-2 rounded-lg"
-          @keyup="handleEnter" 
-        />
+          <input type="text" v-model="searchText" placeholder="Search" class="input input-bordered flex p-2 rounded-lg"
+            @keyup="handleEnter" />
         </div>
         <div class="">
           <div v-if="!isLoggedIn" @click="login" class="flex h-full items-center space-x-4">
@@ -126,10 +120,18 @@ const handleEnter = (event) => {
      overflow-x-auto mx-auto">
       <div class="mx-auto text-currentColor">
         <ul class="flex flex-cols gap-2">
-          <li class="btn py-4 px-4 text-lg font-thin 
-          bg-white/10 border-2 border-neutral/30
-          shadow-lg backdrop-blur-md hover:bg-white/20 rounded-lg">
-            หน้าแรก
+            <div class="box">
+              <span class="borderline"></span>
+              <!-- Button Content -->
+                <li class="btn content py-4 px-4 text-lg font-thin border-transparent shadow-lg hover:bg-white/20 rounded-lg">
+                  หน้าแรก
+                </li>
+            </div>
+          <li class="btn border-none box w-24 py-4 px-4 text-lg font-thin">
+            <span class="borderline"></span>
+            <span class="content">
+              หน้าแรก
+            </span>
           </li>
           <li class="btn py-4 px-4 text-lg font-thin 
           bg-white/10 border-2 border-neutral/30
@@ -191,3 +193,119 @@ const handleEnter = (event) => {
     </footer>
   </div>
 </template>
+
+
+<style scoped>
+.box{
+  position: relative;
+  background: #000;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.box::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(0deg ,#ff2770, #ff2770, #ff2770 , transparent, transparent);
+  animation : animate 6s linear infinite;
+  transform-origin: top left;
+}
+.box::after{
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(0deg ,#ff2770, #ff2770, #ff2770, transparent, transparent);
+  animation : animate 6s linear infinite;
+  transform-origin: top left;
+  animation-delay: -3s;
+}
+.borderline {
+  position: absolute;
+  top: 0;
+  inset: 0;
+}
+.borderline::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(0deg, #45f3ff, #45f3ff, #45f3ff , transparent, transparent);
+  animation : animate 6s linear infinite;
+  transform-origin: top left;
+  animation-delay: -1.5s;
+  z-index: 1;
+}
+.borderline::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(0deg, #45f3ff, #45f3ff, #45f3ff , transparent, transparent);
+  animation : animate 6s linear infinite;
+  transform-origin: top left;
+  animation-delay: -4.5s;
+  z-index: 1;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  } 
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.content {
+  inset: 2px;
+  position: absolute;
+  z-index: 10;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #28292d;
+  backdrop-filter: blur(8px);
+}
+.content::before {
+  content: '';
+  width: 120%;
+  height: 120%;
+  position: absolute;
+  z-index: -1;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.3);
+}
+.content::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  border-radius: 4px;
+}
+.content:hover{
+  color: oklch(0.47 0.2104 329.41);
+  z-index: 10;
+}
+/* Fix: This is how you target the ::after pseudo-element when the parent is hovered */
+/* .content:hover::before {
+  background: rgba(255, 255, 255, 0.3);
+} */
+.content:hover::after {
+  color: oklch(0.47 0.2104 329.41);
+  z-index: -1;
+}
+</style>

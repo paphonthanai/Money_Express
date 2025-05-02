@@ -51,7 +51,7 @@ const slideStyle = computed(() => ({
       <div class="mt-4">
         <div class="absolute left-1/2 transform -translate-x-1/2 flex gap-2">
           <button v-for="n in totalSlides" :key="n" @click="currentSlide = n - 1" :class="[
-            'btn btn-xs px-2 border rounded-full transition-all duration-300',
+            'btn btn-xs px-2 border rounded-lg transition-all duration-300',
             currentSlide === n - 1
               ? 'bg-yellow-400 text-black border-yellow-500'
               : 'bg-white/20 text-white border-white/30 hover:bg-white/30'
