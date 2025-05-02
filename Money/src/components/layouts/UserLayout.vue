@@ -120,43 +120,41 @@ const handleEnter = (event) => {
      overflow-x-auto mx-auto">
       <div class="mx-auto text-currentColor">
         <ul class="flex flex-cols gap-2">
-            <div class="box">
-              <span class="borderline"></span>
-              <!-- Button Content -->
-                <li class="btn content py-4 px-4 text-lg font-thin border-transparent shadow-lg hover:bg-white/20 rounded-lg">
-                  หน้าแรก
-                </li>
-            </div>
-          <li class="btn border-none box w-24 py-4 px-4 text-lg font-thin">
+          <li class="btn border-none box w-24 p-6 text-lg font-thin">
             <span class="borderline"></span>
             <span class="content">
               หน้าแรก
             </span>
           </li>
-          <li class="btn py-4 px-4 text-lg font-thin 
-          bg-white/10 border-2 border-neutral/30
-          shadow-lg backdrop-blur-md hover:bg-white/20 rounded-lg">
-            เติมเกมส์
+          <li class="btn border-none box w-24 py-4 px-4 text-lg font-thin">
+            <span class="borderline"></span>
+            <span class="content">
+              เติมเกมส์
+            </span>
           </li>
-          <li class="btn py-4 px-4 text-lg font-thin 
-          bg-white/10 border-2 border-neutral/30
-          shadow-lg backdrop-blur-md hover:bg-white/20 rounded-lg">
-            เติมเงิน
+          <li class="btn border-none box w-24 py-4 px-4 text-lg font-thin">
+            <span class="borderline"></span>
+            <span class="content">
+              เติมเงิน
+            </span>
           </li>
-          <li class="btn py-4 px-4 text-lg font-thin 
-          bg-white/10 border-2 border-neutral/30
-          shadow-lg backdrop-blur-md hover:bg-white/20 rounded-lg">
-            โปรโมชั่น
+          <li class="btn border-none box w-24 py-4 px-4 text-lg font-thin">
+            <span class="borderline"></span>
+            <span class="content">
+              โปรโมชั่น
+            </span>
           </li>
-          <li class="btn py-4 px-4 text-lg font-thin 
-          bg-white/10 border-2 border-neutral/30
-          shadow-lg backdrop-blur-md hover:bg-white/20 rounded-lg">
-            ซื้อขาย ไอดีเกมส์
+          <li class="btn border-none box min-w-42 py-4 px-4 text-lg font-thin">
+            <span class="borderline"></span>
+            <span class="content">
+              ซื้อขาย ไอดีเกมส์
+            </span>
           </li>
-          <li class="btn py-4 px-4 text-lg font-thin 
-          bg-white/10 border-2 border-neutral/30
-          shadow-lg backdrop-blur-md hover:bg-white/20 rounded-lg">
-            บริการอื่นๆ
+          <li class="btn border-none box w-24 py-4 px-4 text-lg font-thin">
+            <span class="borderline"></span>
+            <span class="content">
+              บริการอื่นๆ
+            </span>
           </li>
         </ul>
       </div>
@@ -297,7 +295,8 @@ const handleEnter = (event) => {
   border-radius: 4px;
 }
 .content:hover{
-  color: oklch(0.47 0.2104 329.41);
+  /* color: oklch(0.47 0.2104 329.41); */
+  
   z-index: 10;
 }
 /* Fix: This is how you target the ::after pseudo-element when the parent is hovered */
@@ -305,7 +304,8 @@ const handleEnter = (event) => {
   background: rgba(255, 255, 255, 0.3);
 } */
 .content:hover::after {
-  color: oklch(0.47 0.2104 329.41);
+  background: rgba(0, 0, 0, 0.4);
+  /* color: oklch(0.47 0.2104 329.41); */
   z-index: -1;
 }
 </style>

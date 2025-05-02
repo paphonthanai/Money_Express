@@ -19,7 +19,7 @@
                        
             <div>
                 <div class="border-4 border-[currentColor]/90 transition transform hover:scale-105 rounded-xl overflow-hidden">
-                    <img class="rounded-lg w-full lg:h-[200px] object-cover" src="../assets/Image/Game/EFootball/1.png" alt="EFootball">
+                    <img class="rounded-lg w-[400px] h-[400px] lg:h-[400px] object-cover" src="../assets/Image/Game/EFootball/1.png" alt="EFootball">
                 </div>
                 <div class="text-center pt-2 font-semibold">
                     eFootball
@@ -28,7 +28,7 @@
 
             <div>
                 <div class="border-4 border-[currentColor]/90 transition transform hover:scale-105 rounded-xl overflow-hidden">
-                    <img class="rounded-lg w-full lg:h-[200px] object-cover" src="../assets/Image/Game/DeltaForce/1.jpg" alt="DeltaForce">
+                    <img class="rounded-lg w-[400px] h-[400px] lg:h-[400px] object-cover object-fit" src="../assets/Image/Game/DeltaForce/2.jpg" alt="DeltaForce">
                 </div>
                 <div class="text-center pt-2 font-semibold">
                     DeltaForce
@@ -37,7 +37,7 @@
                 
             <div>
                 <div class="border-4 border-[currentColor]/90 transition transform hover:scale-105 rounded-xl overflow-hidden">
-                    <img class="rounded-lg w-full lg:h-[200px] object-cover" src="../assets/Image/Game/ROV/1.jpg" alt="ROV">
+                    <img class="rounded-lg w-[400px] h-[400px] lg:h-[400px] object-cover" src="../assets/Image/Game/ROV/1.jpg" alt="ROV">
                 </div>
                 <div class="text-center pt-2 font-semibold">
                     ROV
@@ -46,7 +46,7 @@
 
             <div>
                 <div class="border-4 border-[currentColor]/90 transition transform hover:scale-105 rounded-xl overflow-hidden">
-                    <img class="rounded-lg w-full lg:h-[200px] object-cover" src="../assets/Image/Game/Freefire/1.jpg" alt="Freefire">
+                    <img class="rounded-lg w-[400px] h-[400px] lg:h-[400px] object-cover" src="../assets/Image/Game/Freefire/1.jpg" alt="Freefire">
                 </div>
                 <div class="text-center pt-2 font-semibold">
                     FreeFire
@@ -55,7 +55,7 @@
 
             <div>
                 <div class="border-4 border-[currentColor]/90 transition transform hover:scale-105 rounded-xl overflow-hidden">
-                    <img class="rounded-lg w-full lg:h-[200px] object-cover object-left" src="../assets/Image/Game/Ragnarog/1.jpg" alt="RagnarogM">
+                    <img class="rounded-lg w-[400px] h-[400px] lg:h-[400px] object-cover object-left" src="../assets/Image/Game/Ragnarog/1.jpg" alt="RagnarogM">
                 </div>
                 <div class="text-center pt-2 font-semibold">
                     Ragnarok M
@@ -64,7 +64,7 @@
             
             <div>
                 <div class="border-4 border-[currentColor]/90 transition transform hover:scale-105 rounded-xl overflow-hidden">
-                    <img class="rounded-lg w-full lg:h-[200px] object-cover" src="../assets/Image/Game/SoloLevel/1.png" alt="DeltaForceSteam">
+                    <img class="rounded-lg w-[400px] h-[400px] lg:h-[400px] object-cover" src="../assets/Image/Game/SoloLevel/1.png" alt="DeltaForceSteam">
                 </div>
                 <div class="text-center pt-2 font-semibold">
                     Solo Leveling:Arise
